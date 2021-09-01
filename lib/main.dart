@@ -1,7 +1,7 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_news/bloc_observer.dart';
-import 'package:bloc/bloc.dart';
 import 'package:flutter_application_news/cubit/cubit.dart';
 import 'package:flutter_application_news/cubit/state.dart';
 import 'package:flutter_application_news/models/dio.dart';
@@ -12,6 +12,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'const.dart';
 
 void main() {
+  // للتأكد من تنفيذ ما بداخل الفانكشن
   WidgetsFlutterBinding.ensureInitialized();
   DioHelper.init();
   Bloc.observer = MyBlocObserver();
@@ -135,10 +136,10 @@ class Home extends StatelessWidget {
     return BlocConsumer<NewsCubit, NewsStates>(
       listener: (context, state) {},
       builder: (context, state) {
-        var cubit = BlocProvider.of<NewsCubit>(context);
+        NewsCubit cubit = BlocProvider.of<NewsCubit>(context);
         return Scaffold(
           appBar: AppBar(
-            automaticallyImplyLeading: false,
+            // automaticallyImplyLeading: false,
             title: appTitle,
             actions: [
               searchIcon(context),

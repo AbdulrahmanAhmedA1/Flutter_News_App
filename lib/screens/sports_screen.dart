@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_news/cubit/cubit.dart';
 import 'package:flutter_application_news/cubit/state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 import '../const.dart';
 
@@ -16,10 +15,10 @@ class SportsScreen extends StatelessWidget {
       listener: (ctx, state) {},
       builder: (ctx, state) {
         return ConditionalBuilder(
+          condition: cubit.sports.length > 0,
           fallback: (ctx) => Center(
             child: CircularProgressIndicator(),
           ),
-          condition: cubit.sports.length > 0,
           builder: (context) => ListView.separated(
             separatorBuilder: (ctx, index) {
               return divider();

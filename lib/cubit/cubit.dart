@@ -26,9 +26,9 @@ class NewsCubit extends Cubit<NewsStates> {
     SportsScreen(),
     ScienceScreen(),
   ];
-  ThemeMode themeMode = ThemeMode.light;
+  // ThemeMode themeMode = ThemeMode.light;
   bool isDark = false;
-  changeAppMode() {
+  changeAppThemeMode() {
     isDark = !isDark;
     emit(AppChangeModeState());
   }

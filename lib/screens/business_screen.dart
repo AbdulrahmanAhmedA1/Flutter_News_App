@@ -10,7 +10,7 @@ class BusinessScreen extends StatelessWidget {
     return BlocConsumer<NewsCubit, NewsStates>(
       listener: (context, state) {},
       builder: (context, state) {
-        var cubit = BlocProvider.of<NewsCubit>(context);
+        NewsCubit cubit = BlocProvider.of<NewsCubit>(context);
 
         return cubit.business.length > 0
             ? ListView.separated(
@@ -26,6 +26,4 @@ class BusinessScreen extends StatelessWidget {
       },
     );
   }
-
-
 }

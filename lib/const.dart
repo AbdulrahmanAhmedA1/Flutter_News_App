@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 import 'package:intl/intl.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+
 import 'cubit/cubit.dart';
 
 IconButton themeModeIcon(NewsCubit cubit) {
   return IconButton(
       icon: Icon(Icons.brightness_4_outlined),
       onPressed: () {
-        cubit.changeAppMode();
+        cubit.changeAppThemeMode();
       });
 }
 
